@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Logo -->
+    <img src="img/logo.svg" alt="logo" class="logo">
+
+    <div class="container">
+
+        <div id="input-section">
+
+            <div class="total-bill-container">
+                <label for="total-bill">Total Bill</label>
+                <div class="input-with-icon">
+                    <i class="bi bi-currency-dollar"></i>
+                    <input type="number" id="total-bill" name="total-bill" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="numOfPeople-container">
+                <label for="numOfPeople">Number of People</label>       
+                <div class="number-input-group">
+                    <button class="minus-button square-button">
+                        <i class="bi bi-dash"></i>
+                    </button>
+                    <input type="number" name="numOfPeople" id="numOfPeople" value="1" min="1">
+                    <button class="plus-button square-button">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="selec-tip-container">
+                <label for="tip">Select Tip %</label>
+                <div class="tip-grid">
+                    <button class="tip-button button" id="notip-button">No Tip</button>
+                    <button data-percent="10" class="tip-button button" id="tip10-button">10%</button>
+                    <button data-percent="15" class="tip-button button" id="tip15-button">15%</button>
+                    <button data-percent="25" class="tip-button button" id="tip25-button">25%</button>
+                    <button data-percent="50" class="tip-button button" id="tip50-button">50%</button>
+                    <div class="custom-tip-container">
+                        <span class="dollar-symbol">$</span>
+                        <input 
+                          type="number" 
+                          name="custom-tip" 
+                          class="custom-tip" 
+                          placeholder="Custom" 
+                          id="customTip-button"
+                        >
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-section">
+
+            <div id="top-prices">
+                    <div class="prices">
+                        <div>
+                            <h4>Tip</h4>
+                            <p>per person</p>
+                        </div>
+
+                        <span id="tip-per-person" class="result-amount">$0.00</span>  
+                    </div>
+
+                    <div class="prices">
+                        <div>
+                            <h4>Bill</h4>
+                            <p>per person</p>
+                        </div>
+
+                        <span id="bill-per-person" class="result-amount">$0.00</span>
+                        
+                    </div>
+                </div>
+
+                <div id="bottom-prices">
+                    <div class="prices" id="total-prices">
+                        <div>
+                            <h2>Total</h4>
+                            <p>per person</p>
+                        </div>
+                        <span id="total-per-person" class="result-amount">$0.00</span>
+                    </div>
+                    
+                    <div id="reset-button-container">
+                        <button id="reset-button">RESET</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
